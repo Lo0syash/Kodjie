@@ -91,6 +91,18 @@ main{
     }
 }
 
+@media (max-width: 800px) {
+    .container-content{
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-content{
+        max-width: 450px;
+    }
+}
+
 
 .logotype{
     text-transform: uppercase;
@@ -260,9 +272,31 @@ main{
                     }
                 }
             }
-            .banner-pagination{
+            .banner-btn{
                 position: absolute;
                 bottom: 2rem;
+                display: flex;
+                align-items: start;
+                gap: 50px;
+                .btn-next, .btn-prev{
+                    width: 50px;
+                    height: 50px;
+                    background: #A18A68;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    svg{
+                        path{
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+            .banner-pagination{
+                position: absolute;
+                top: 2rem;
                 z-index: 3;
                 display: flex;
                 align-items: center;
@@ -288,6 +322,22 @@ main{
         }
     }
 }
+
+@media (max-width: 1240px) {
+    .banner{
+        .banner__inner{
+            .banner-slider{
+                .banner-slide{
+                    border-radius: 15px;
+                    .banner-slide--content{
+                        padding: 100px 0 0 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 // CATALOG
 // CATALOG
@@ -364,11 +414,46 @@ main{
         .catalog__inner{
             .catalog__inner-content{
                 .catalog__inner-item--list{
-                    justify-content: center;
                     .catalog__inner-item{
                         .catalog__inner-item--image{
                             width: 23.75rem;
                             height: 23.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .catalog{
+        .catalog__inner{
+            .catalog__inner-content{
+                .catalog__inner-item--list{
+                    flex-direction: column;
+                    .catalog__inner-item{
+                        .catalog__inner-item--image{
+                            width: 100%;
+                            height: 25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .catalog{
+        .catalog__inner{
+            .catalog__inner-content{
+                .catalog__inner-item--list{
+                    flex-direction: column;
+                    .catalog__inner-item{
+                        .catalog__inner-item--image{
+                            width: 100%;
+                            height: 25rem;
                         }
                     }
                 }
