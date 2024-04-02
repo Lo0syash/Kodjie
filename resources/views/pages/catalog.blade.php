@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Каталог')
 @section('content')
-    <div class="catalog">
+    <section class="catalog">
         <div class="container">
             <div class="catalog__inner">
                 <h1 class="catalog-title">Каталог товаров</h1>
@@ -92,6 +92,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 

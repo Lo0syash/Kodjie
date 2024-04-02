@@ -828,3 +828,73 @@ main{
         }
     }
 }
+
+// ABOUT
+// ABOUT
+
+.about{
+    .about__inner{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        .logotype-container{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            .logo-box{
+                position: relative;
+                width: 380px;
+                height: 380px;
+                background: #333;
+                border-radius: 50%;
+                margin-top: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .logotype{
+                    width: 300px;
+                    height: 300px;
+                    position: absolute;
+                    top: 0;
+                }
+            }
+        }
+        .about-content{
+            font-weight: 500;
+            max-width: 80vw;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            p{
+                font-size: 21px;
+                line-height: 35px;
+                text-align: justify;
+                label{
+                    text-transform: uppercase;
+                    font-size: 35px;
+                    font-family: 'Alerta stencil', sans-serif;
+                    color: #333;
+                    position: relative;
+                    z-index: 5;
+                    span{
+                        color: #A18A68;
+                        &.active{
+                            color: #fff !important;
+                        }
+                    }
+                }
+            }
+        }
+        .text-compl {
+            font-size: 21px;
+            line-height: 35px;
+            text-align: justify;
+            padding: 2rem 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+
