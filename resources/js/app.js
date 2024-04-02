@@ -55,3 +55,11 @@ if (currentIndex === slide.length - 1) {
     btnNext.classList.add('disabled')
 }
 
+document.querySelector('.header__burger').addEventListener('click', ()=>{
+    document.querySelector('.header__burger').classList.toggle('active')
+    document.querySelector('.header__inner-func').classList.toggle('active')
+    setTimeout(() => {
+        document.querySelector('.logotype__span--color').classList.toggle('active')
+    }, 250);
+})
+
