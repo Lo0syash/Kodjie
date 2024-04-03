@@ -7,7 +7,7 @@
                     <ul class="nav-list">
                         <li><a href="{{route('catalog.index')}}" class="nav-link">Каталог</a></li>
                         <li><a href="{{route('index.about')}}" class="nav-link">О нас</a></li>
-                        <li><a href="#" class="nav-link">Где нас найти?</a></li>
+                        <li><a href="{{route('index.how')}}" class="nav-link">Где нас найти?</a></li>
                     </ul>
                 </nav>
             </div>

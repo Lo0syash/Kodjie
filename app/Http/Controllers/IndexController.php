@@ -14,4 +14,8 @@ class IndexController extends Controller
     {
         return view('pages.about');
     }
+    public function how()
+    {
+        return view('pages.how');
+    }
 }

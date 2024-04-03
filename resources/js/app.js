@@ -63,3 +63,53 @@ document.querySelector('.header__burger').addEventListener('click', ()=>{
     }, 250);
 })
 
+
+const sliderAbout = document.querySelector('.best-cataog--slider')
+const slides = Array.from(sliderAbout.querySelectorAll('.btn-slide'))
+const slidesLenght = slides.length
+let slidesPerView = 4
+let currentIndexAbout = 0
+
+function showAboutSlide(startIndex) {
+    slides.forEach((slide, index)=>{
+        if (index >= startIndex && index < startIndex + slidesPerView) {
+            slide.style.display = 'block'
+        } else {
+            slide.style.display = 'none'
+        }
+    })
+}
+
+sliderAbout.querySelector('.btn-next').addEventListener('click', ()=>{
+    if (currentIndexAbout < slidesLenght - slidesPerView) {
+        currentIndexAbout++
+        showAboutSlide(currentIndexAbout)
+    } else {
+        aboutSlider.querySelector('.btn-next').disabled = true;
+    }
+})
+
+
+sliderAbout.querySelector('.btn-prev').addEventListener('click', ()=>{
+    if (currentIndexAbout > 0) {
+        currentIndexAbout--
+        showAboutSlide(currentIndexAbout)
+    }
+})
+
+function updateSlidesPerView() {
+    if (window.innerWidth <= 600)
+    {
+        slidesPerView = 1;
+    } else if (window.innerWidth <= 870) {
+        slidesPerView = 2;
+    } else if (window.innerWidth <= 1200) {
+        slidesPerView = 3;
+    } else {
+        slidesPerView = 4;
+    }
+    showAboutSlide(currentIndexAbout);
+}
+
+showAboutSlide(currentIndexAbout) 
+window.addEventListener('resize', updateSlidesPerView);
