@@ -1,4 +1,4 @@
-import { lte } from 'lodash';
+import { escape, lte } from 'lodash';
 import './bootstrap';
 
 let ellipse = document.querySelectorAll('.ellipse');
@@ -113,3 +113,4 @@ function updateSlidesPerView() {
 
 showAboutSlide(currentIndexAbout) 
 window.addEventListener('resize', updateSlidesPerView);
+
