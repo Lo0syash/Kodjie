@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,11 @@ Route::controller(\App\Http\Controllers\IndexController::class)->group(function 
 
 Route::controller(\App\Http\Controllers\CatalogController::class)->group(function () {
    Route::get('/catalog', 'index')->name('catalog.index');
+   Route::get('/oneitem', 'oneitem')->name('oneitem.index');
+});
+
+Route::controller(AuthController::class)->group(function () {
+   Route::get('/auth', 'login')->name('auth.index');
+   Route::get('/reg', 'registration')->name('registration.index');
+   Route::get('/profile', 'profile')->name('profile.index');
 });
