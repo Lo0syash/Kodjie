@@ -23,7 +23,7 @@ let btnPrev = document.querySelector('.btn-prev');
 let btnNext = document.querySelector('.btn-next');
 let currentIndex = 0
 
-function showSlodes(index) {
+function showSlides(index) {
     slide.forEach((slides, i) => {
         if (i === index) {
             slides.classList.add('active')
@@ -33,17 +33,17 @@ function showSlodes(index) {
     })
 }
 
-showSlodes(currentIndex)
+showSlides(currentIndex)
 
 document.querySelector('.btn-prev').addEventListener('click', ()=>{
     currentIndex = (currentIndex - 1) % slide.length
-    showSlodes(currentIndex)
+    showSlides(currentIndex)
     slider(currentIndex)
 })
 
 document.querySelector('.btn-next').addEventListener('click', ()=>{
     currentIndex = (currentIndex + 1) % slide.length
-    showSlodes(currentIndex)
+    showSlides(currentIndex)
     slider(currentIndex)
 })
 

@@ -18,4 +18,8 @@ class IndexController extends Controller
     {
         return view('pages.how');
     }
+    public function admin()
+    {
+        return view('pages.admin');
+    }
 }
