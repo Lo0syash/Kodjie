@@ -28,6 +28,9 @@ Route::controller(\App\Http\Controllers\CatalogController::class)->group(functio
 
 Route::controller(AuthController::class)->group(function () {
    Route::get('/auth', 'login')->name('auth.index');
+   Route::post('/auth', 'auth')->name('auth.auth');
    Route::get('/reg', 'registration')->name('registration.index');
+   Route::post('/reg', 'reg')->name('registration.reg');
    Route::get('/profile', 'profile')->name('profile.index');
+   Route::post('/logout', 'logout')->name('profile.logout');
 });

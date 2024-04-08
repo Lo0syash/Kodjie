@@ -4,16 +4,22 @@
     <section class="form-modal-block">
         <div class="container">
             <div class="form-modal-block__inner">
-                <p class="form-modal-block--error">error</p>
-                <form method="post">
-                    <input type="text" placeholder="Имя">
-                    <input type="text" placeholder="Фамилия">
-                    <input type="text" placeholder="Отчество (при наличии)">
-                    <input type="text" placeholder="Логин">
-                    <input type="password" placeholder="Пароль">
-                    <input type="password" placeholder="Повторите пароль">
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <p class="form-modal-block--error">{{$error}}</p>
+                    @endforeach
+                @endif
+                {{-- @error('invalid_credentials')  @enderror --}}
+                <form action="{{route('registration.reg')}}" method="post">
+                    @csrf
+                    <input type="text" name="name" placeholder="Имя" value="{{@old('name')}}">
+                    <input type="text" name="surname" placeholder="Фамилия" value="{{@old('surname')}}">
+                    <input type="text" name="patronimic" placeholder="Отчество (при наличии)" value="{{@old('patronimic')}}">
+                    <input type="text" name="login" placeholder="Логин" value="{{@old('login')}}">
+                    <input type="password" name="password" placeholder="Пароль">
+                    <input type="password" name="re_password" placeholder="Повторите пароль">
                     <div class="checkbox-rule--box">
-                        <input type="checkbox" name="checkbox-rule" id="checkbox-rule">    
+                        <input type="checkbox" name="checkbox-rule" id="checkbox-rule">
                         <label for="checkbox-rule">Согласие с правилами регистрации</label>
                     </div>
                     <input type="submit" value="Зарегистрироваться">

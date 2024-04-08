@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
     <link rel="shortcut icon" href="/public/favicon.svg">
     {{-- @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="./public/build/assets/app-00ee961e.css">
+    <link rel="stylesheet" href="./public/build/assets/app-b9d81915.css">
     <script src="./public/build/assets/app-7d143a0f.js" defer></script>
 
 </head>
