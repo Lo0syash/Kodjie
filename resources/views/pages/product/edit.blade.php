@@ -13,9 +13,9 @@
                 <form action="{{route('auth.auth')}}" method="post">
                     @csrf
                     <input type="text" name="name" placeholder="Название товара" value="{{$product->name}}">
-                    <textarea name="description" placeholder="Описание для товара">{{$product->description}}</textarea>
+                    <textarea name="description" placeholder="Описание для товара" class="input-textarea">{{$product->description}}</textarea>
                     <input type="text" name="price" placeholder="Цена товара" value="{{$product->price}}">
-                    <select name="category_id">
+                    <select name="category_id" class="category_input">
                         @foreach($category as $item)
                             <option
                                 @selected($product->id == $item->id)

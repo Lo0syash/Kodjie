@@ -16,7 +16,7 @@
                                 <div class="admin__category-item">
                                     {{$item->name}}
                                     <div class="admin__category-item--btn">
-                                        <a href="#">
+                                        <a href="{{route('category.edit', $item->id)}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
                                                 <path d="M11 4H7.2C6.0799 4 5.51984 4 5.09202 4.21799C4.71569 4.40974 4.40973 4.7157 4.21799 5.09202C4
                                                 5.51985 4 6.0799 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.40973 19.2843 4.71569 19.5903 5.09202
@@ -59,14 +59,16 @@
                             @if(!empty($product))
                                 @foreach($product as $item)
                                     <div class="catalog__inner-item">
-                                        <div class="catalog__inner-item--image"></div>
+                                        <div class="catalog__inner-item--image">
+                                            <img src="{{$item->getImgeUrl()}}" alt="">
+                                        </div>
                                         <div class="catalog-content--box">
                                             <p class="catalog__inner-item--name">{{$item->name}}</p>
                                             <p class="catalog__inner-item--price">{{$item->price}} ₽</p>
                                         </div>
                                         <hr>
                                         <div class="catalog-content--btn">
-                                            <a href="#">
+                                            <a href="{{route('product.edit', $item->id)}}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
                                                     <path d="M11 4H7.2C6.0799 4 5.51984 4 5.09202 4.21799C4.71569 4.40974 4.40973 4.7157 4.21799 5.09202C4
                                             5.51985 4 6.0799 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.40973 19.2843 4.71569 19.5903 5.09202

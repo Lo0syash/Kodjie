@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Category\StoreRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryContoller extends Controller
@@ -11,8 +13,14 @@ class CategoryContoller extends Controller
         return view('pages.category.create');
     }
 
-    public function edit()
+    public function edit(Category $category)
     {
-        return view('pages.category.edit');
+        return view('pages.category.edit', compact('category'));
+    }
+
+    public function store(StoreRequest $request) {
+        $date = $request->validated();
+        Category::query()->create($date);
+        return redirect()->route('index.admin');
     }
 }

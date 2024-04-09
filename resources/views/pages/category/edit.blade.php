@@ -13,7 +13,7 @@
                 <form action="{{route('auth.auth')}}" method="post">
                     @csrf
                     <input type="text" name="name" placeholder="Наименование категории" value="{{$category->name}}">
-                    <input type="submit" value="Добавить">
+                    <input type="submit" value="Обновить">
                 </form>
             </div>
         </div>

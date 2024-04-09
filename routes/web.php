@@ -38,11 +38,11 @@ Route::controller(\App\Http\Controllers\CatalogController::class)->group(functio
 Route::controller(\App\Http\Controllers\ProductContoller::class)->prefix('product')->group(function (){
     Route::get('/create', 'create')->name('product.create');
     Route::get('/{product}/edit', 'edit')->name('product.edit');
-    Route::post('/', 'store')->name('store');
+    Route::post('/', 'store')->name('product.store');
 });
 
 Route::controller(\App\Http\Controllers\CategoryContoller::class)->prefix('category')->group(function (){
     Route::get('/create', 'create')->name('category.create');
     Route::get('/{category}/edit', 'edit')->name('category.edit');
-//    Route::post('/', 'store')->name('store');
+    Route::post('/', 'store')->name('category.store');
 });

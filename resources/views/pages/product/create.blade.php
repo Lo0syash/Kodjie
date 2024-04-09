@@ -9,15 +9,14 @@
                         <p class="form-modal-block--error">{{$error}}</p>
                     @endforeach
                 @endif
-                @error('invalid_credentials') <p class="form-modal-block--error">{{$message}}</p> @enderror
-                <form action="{{route('auth.auth')}}" method="post">
+                <form action="{{route('product.store')}}" method="post">
                     @csrf
                     <input type="text" name="name" placeholder="Название товара" value="{{@old('name')}}">
                     <textarea name="description" placeholder="Описание для товара" class="input-textarea"></textarea>
                     <input type="text" name="price" placeholder="Цена товара" value="{{@old('price')}}">
                     <select name="category_id" class="category_input">
                         @foreach($category as $item)
-                            <option id="{{$item->id}}">{{$item->name}}</option>
+                            <option id="{{$item->id}}" value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
                     </select>
                     <input type="file" class="input w-full" name="path">

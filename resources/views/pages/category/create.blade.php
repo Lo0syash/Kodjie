@@ -9,8 +9,7 @@
                         <p class="form-modal-block--error">{{$error}}</p>
                     @endforeach
                 @endif
-                @error('invalid_credentials') <p class="form-modal-block--error">{{$message}}</p> @enderror
-                <form action="{{route('auth.auth')}}" method="post">
+                <form action="{{route('category.store')}}" method="post">
                     @csrf
                     <input type="text" name="name" placeholder="Наименование категории" value="{{@old('name')}}">
                     <input type="submit" value="Добавить">
