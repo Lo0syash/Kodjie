@@ -21,11 +21,6 @@ Route::controller(\App\Http\Controllers\IndexController::class)->group(function 
    Route::get('/admin', 'admin')->name('index.admin');
 });
 
-Route::controller(\App\Http\Controllers\CatalogController::class)->group(function () {
-   Route::get('/catalog', 'index')->name('catalog.index');
-   Route::get('/oneitem', 'oneitem')->name('oneitem.index');
-});
-
 Route::controller(AuthController::class)->group(function () {
    Route::get('/auth', 'login')->name('auth.index');
    Route::post('/auth', 'auth')->name('auth.auth');
@@ -33,4 +28,21 @@ Route::controller(AuthController::class)->group(function () {
    Route::post('/reg', 'reg')->name('registration.reg');
    Route::get('/profile', 'profile')->name('profile.index');
    Route::post('/logout', 'logout')->name('profile.logout');
+});
+
+Route::controller(\App\Http\Controllers\CatalogController::class)->group(function () {
+    Route::get('/catalog', 'index')->name('category.index');
+    Route::get('/oneitem', 'oneitem')->name('oneitem.index');
+});
+
+Route::controller(\App\Http\Controllers\ProductContoller::class)->prefix('product')->group(function (){
+    Route::get('/create', 'create')->name('product.create');
+    Route::get('/{product}/edit', 'edit')->name('product.edit');
+    Route::post('/', 'store')->name('store');
+});
+
+Route::controller(\App\Http\Controllers\CategoryContoller::class)->prefix('category')->group(function (){
+    Route::get('/create', 'create')->name('category.create');
+    Route::get('/{category}/edit', 'edit')->name('category.edit');
+//    Route::post('/', 'store')->name('store');
 });

@@ -10,8 +10,12 @@
             <div class="header__inner-func">
                 <nav class="nav">
                     <ul class="nav-list">
-                        <li><a href="{{route('index.admin')}}" class="nav-link">Админ панель</a></li>
-                        <li><a href="{{route('catalog.index')}}" class="nav-link">Каталог</a></li>
+                        @auth()
+                            @if(auth()->user()->role_id === 1)
+                                <li><a href="{{route('index.admin')}}" class="nav-link">Админ панель</a></li>
+                            @endif
+                        @endauth
+                        <li><a href="{{route('category.index')}}" class="nav-link">Каталог</a></li>
                         <li><a href="{{route('index.about')}}" class="nav-link">О нас</a></li>
                         <li><a href="{{route('index.how')}}" class="nav-link">Где нас найти?</a></li>
                     </ul>

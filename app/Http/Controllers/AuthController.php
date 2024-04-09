@@ -6,6 +6,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegistrationRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -38,7 +39,8 @@ class AuthController extends Controller
 
     public function profile()
     {
-        return view("pages.profile");
+        $user = Auth::user();
+        return view("pages.profile", compact('user'));
     }
 
     public function logout()
