@@ -19,7 +19,7 @@
                     <input type="password" name="password" placeholder="Пароль">
                     <input type="password" name="re_password" placeholder="Повторите пароль">
                     <div class="checkbox-rule--box">
-                        <input type="checkbox" name="checkbox-rule" id="checkbox-rule">
+                        <input type="checkbox" name="checkbox" id="checkbox">
                         <label for="checkbox-rule">Согласие с правилами регистрации</label>
                     </div>
                     <input type="submit" value="Зарегистрироваться">

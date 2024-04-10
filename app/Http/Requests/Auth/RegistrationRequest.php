@@ -29,7 +29,7 @@ class RegistrationRequest extends FormRequest
             'patronimic' =>'string|min:2|max:255',
             'login' =>'required|string|min:2|max:255|unique:users,login',
             'password' => 'required|string|min:8|max:255|same:re_password',
-            'checkbox-rule' => 'accepted',
+            'checkbox' => 'accepted',
             're_password' => 'required|string',
         ];
     }

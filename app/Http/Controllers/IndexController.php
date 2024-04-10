@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Basket;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -10,7 +11,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('pages.index');
+        $product = Product::all();
+        return view('pages.index', compact('product'));
     }
     public function about()
     {

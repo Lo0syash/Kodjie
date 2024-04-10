@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\StoreRequest;
+use App\Http\Requests\Product\UpdateRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -27,6 +28,16 @@ class ProductContoller extends Controller
             $date['path'] = $request->file('path')->store('public/products');
             Product::query()->create($date);
         }
+        return redirect()->route('index.admin');
+    }
+
+    public function update(Product $product, UpdateRequest $request)
+    {
+        $date = $request->validated();
+        if ($request->hasFile('path')) {
+            $date['path'] = $request->file('path')->store('public/products');
+        }
+        $product->update($date);
         return redirect()->route('index.admin');
     }
 

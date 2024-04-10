@@ -15,6 +15,7 @@ html, body{
 }
 
 a{
+    color: #333;
     text-decoration: none;
 }
 
@@ -560,11 +561,13 @@ main{
                         width: 23.75rem;
                         height: 23.75rem;
                         border-radius: 15px;
+                        object-fit: cover;
                     }
                     .catalog__inner-item--name{
                         margin-top: 24px;
                         margin-bottom: 16px;
                         font-size: 20px;
+                        color: #333;
                     }
                     .catalog__inner-item--price{
                         font-size: 20px;

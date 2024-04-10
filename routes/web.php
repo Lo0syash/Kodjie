@@ -32,13 +32,15 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(\App\Http\Controllers\CatalogController::class)->group(function () {
     Route::get('/catalog', 'index')->name('category.index');
-    Route::get('/oneitem', 'oneitem')->name('oneitem.index');
+    Route::get('/catalog/{product}', 'oneItem')->name('catalog.oneItem');
 });
 
 Route::controller(\App\Http\Controllers\ProductContoller::class)->prefix('product')->group(function (){
     Route::get('/create', 'create')->name('product.create');
     Route::get('/{product}/edit', 'edit')->name('product.edit');
     Route::post('/', 'store')->name('product.store');
+    Route::delete('/{product}', 'destroy')->name('product.destroy');
+    Route::patch('/{product}', 'update')->name("product.update");
 });
 
 Route::controller(\App\Http\Controllers\CategoryContoller::class)->prefix('category')->group(function (){
@@ -47,4 +49,9 @@ Route::controller(\App\Http\Controllers\CategoryContoller::class)->prefix('categ
     Route::delete('/{category}', 'destroy')->name('category.destroy');
     Route::post('/', 'store')->name('category.store');
     Route::patch('/{category}', 'update')->name("category.update");
+});
+
+Route::controller(\App\Http\Controllers\BasketController::class)->group(function () {
+   Route::post('/', 'create')->name('basket.create');
+   Route::delete('/{basket}', 'destroy')->name('basket.destroy');
 });

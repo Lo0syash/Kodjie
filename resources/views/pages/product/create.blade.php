@@ -9,10 +9,10 @@
                         <p class="form-modal-block--error">{{$error}}</p>
                     @endforeach
                 @endif
-                <form action="{{route('product.store')}}" method="post">
+                <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="name" placeholder="Название товара" value="{{@old('name')}}">
-                    <textarea name="description" placeholder="Описание для товара" class="input-textarea"></textarea>
+                    <textarea name="description" placeholder="Описание для товара" class="input-textarea">{{@old('description')}}</textarea>
                     <input type="text" name="price" placeholder="Цена товара" value="{{@old('price')}}">
                     <select name="category_id" class="category_input">
                         @foreach($category as $item)

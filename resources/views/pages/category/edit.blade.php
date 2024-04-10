@@ -9,7 +9,6 @@
                         <p class="form-modal-block--error">{{$error}}</p>
                     @endforeach
                 @endif
-                @error('invalid_credentials') <p class="form-modal-block--error">{{$message}}</p> @enderror
                 <form action="{{route('category.update', $category->id)}}" method="post">
                     @csrf
                     @method('PATCH')

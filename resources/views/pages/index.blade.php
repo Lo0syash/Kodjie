@@ -66,11 +66,13 @@
                 </div>
                 <div class="catalog__inner-content">
                     <div class="catalog__inner-item--list">
-                        <a href="#" class="catalog__inner-item">
-                            <div class="catalog__inner-item--image"></div>
-                            <p class="catalog__inner-item--name">Серьги Лира</p>
-                            <p class="catalog__inner-item--price">1.880 ₽</p>
-                        </a>
+                        @foreach($product as $item)
+                            <a href="{{route('catalog.oneItem', $item->id)}}" class="catalog__inner-item">
+                                <img class="catalog__inner-item--image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="">
+                                <p class="catalog__inner-item--name">{{$item->name}}</p>
+                                <p class="catalog__inner-item--price">{{$item->price}} ₽</p>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>

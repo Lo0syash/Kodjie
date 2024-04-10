@@ -36,28 +36,15 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="catalog-sidebar__category">
-                            <h3 class="catalog-sidebar__title">Бренды</h3>
-                            <div class="select">
-                                <select class="catalog-sidebar__list">
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Бриллианты Якутии</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">МЦЗ</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Sunlight</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Krastsvetmet</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Okami</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Бренды Италии</a></option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
                     <hr>
                     <div class="catalog-list">
                         @foreach($product as $item)
-                            <div class="catalog-list--item">
-                                <div class="catalog-list--item__image"></div>
+                            <a href="{{route('catalog.oneItem', $item->id)}}" class="catalog-list--item">
+                                <img class="catalog-list--item__image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="">
                                 <p class="catalog-list--item__name">{{$item->name}}</p>
                                 <p class="catalog-list--item__price">{{$item->price}} ₽</p>
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                 </div>

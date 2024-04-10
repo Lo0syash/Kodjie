@@ -61,9 +61,7 @@
                             @if(!empty($product))
                                 @foreach($product as $item)
                                     <div class="catalog__inner-item">
-                                        <div class="catalog__inner-item--image">
-                                            <img src="{{$item->getImgeUrl()}}" alt="">
-                                        </div>
+                                        <img class="catalog__inner-item--image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="">
                                         <div class="catalog-content--box">
                                             <p class="catalog__inner-item--name">{{$item->name}}</p>
                                             <p class="catalog__inner-item--price">{{$item->price}} ₽</p>

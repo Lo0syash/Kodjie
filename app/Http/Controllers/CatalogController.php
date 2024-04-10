@@ -13,7 +13,7 @@ class CatalogController extends Controller
         $product = Product::all();
         return view('pages.catalog', compact('category', 'product'));
     }
-    public function oneitem(){
-        return view('pages.itemCatalog');
+    public function oneItem(Product $product){
+        return view('pages.itemCatalog', compact('product'));
     }
 }
