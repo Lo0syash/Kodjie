@@ -10,8 +10,9 @@
                     @endforeach
                 @endif
                 @error('invalid_credentials') <p class="form-modal-block--error">{{$message}}</p> @enderror
-                <form action="{{route('auth.auth')}}" method="post">
+                <form action="{{route('category.update', $category->id)}}" method="post">
                     @csrf
+                    @method('PATCH')
                     <input type="text" name="name" placeholder="Наименование категории" value="{{$category->name}}">
                     <input type="submit" value="Обновить">
                 </form>

@@ -44,5 +44,7 @@ Route::controller(\App\Http\Controllers\ProductContoller::class)->prefix('produc
 Route::controller(\App\Http\Controllers\CategoryContoller::class)->prefix('category')->group(function (){
     Route::get('/create', 'create')->name('category.create');
     Route::get('/{category}/edit', 'edit')->name('category.edit');
+    Route::delete('/{category}', 'destroy')->name('category.destroy');
     Route::post('/', 'store')->name('category.store');
+    Route::patch('/{category}', 'update')->name("category.update");
 });

@@ -29,4 +29,10 @@ class ProductContoller extends Controller
         }
         return redirect()->route('index.admin');
     }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        return redirect()->route('index.admin');
+    }
 }

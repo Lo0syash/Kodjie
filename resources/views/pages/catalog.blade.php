@@ -20,13 +20,12 @@
                             <h3 class="catalog-sidebar__title">Категория</h3>
                             <div class="select">
                                 <select class="catalog-sidebar__list">
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Кольца</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Браслеты</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Ожерелья</a></option>
-                                    <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">Серьги</a></option>
+                                    @foreach($category as $item)
+                                        <option class="catalog-sidebar__item"><a href="#" class="catalog-sidebar__link">{{$item->name}}</a></option>
+                                    @endforeach
                                 </select>
                             </div>
-                            
+
                         </div>
                         <div class="catalog-sidebar__category">
                             <h3 class="catalog-sidebar__title">Сортировка</h3>
@@ -53,41 +52,13 @@
                     </div>
                     <hr>
                     <div class="catalog-list">
-                        <div class="catalog-list--item">
-                            <div class="catalog-list--item__image"></div>
-                            <p class="catalog-list--item__name">Название товара</p>
-                            <p class="catalog-list--item__price">20.000 ₽</p>
-                        </div>
-                        <div class="catalog-list--item">
-                            <div class="catalog-list--item__image"></div>
-                            <p class="catalog-list--item__name">Название товара</p>
-                            <p class="catalog-list--item__price">20.000 ₽</p>
-                        </div>
-                        <div class="catalog-list--item">
-                            <div class="catalog-list--item__image"></div>
-                            <p class="catalog-list--item__name">Название товара</p>
-                            <p class="catalog-list--item__price">20.000 ₽</p>
-                        </div>
-                        <div class="catalog-list--item">
-                            <div class="catalog-list--item__image"></div>
-                            <p class="catalog-list--item__name">Название товара</p>
-                            <p class="catalog-list--item__price">20.000 ₽</p>
-                        </div>
-                        <div class="catalog-list--item">
-                            <div class="catalog-list--item__image"></div>
-                            <p class="catalog-list--item__name">Название товара</p>
-                            <p class="catalog-list--item__price">20.000 ₽</p>
-                        </div>
-                        <div class="catalog-list--item">
-                            <div class="catalog-list--item__image"></div>
-                            <p class="catalog-list--item__name">Название товара</p>
-                            <p class="catalog-list--item__price">20.000 ₽</p>
-                        </div>
-                        <div class="catalog-list--item">
-                            <div class="catalog-list--item__image"></div>
-                            <p class="catalog-list--item__name">Название товара</p>
-                            <p class="catalog-list--item__price">20.000 ₽</p>
-                        </div>
+                        @foreach($product as $item)
+                            <div class="catalog-list--item">
+                                <div class="catalog-list--item__image"></div>
+                                <p class="catalog-list--item__name">{{$item->name}}</p>
+                                <p class="catalog-list--item__price">{{$item->price}} ₽</p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
