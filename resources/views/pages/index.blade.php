@@ -68,8 +68,8 @@
                     <div class="catalog__inner-item--list">
                         @foreach($product as $item)
                             <a href="{{route('catalog.oneItem', $item->id)}}" class="catalog__inner-item">
-                                <img class="catalog__inner-item--image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="">
-                                <p class="catalog__inner-item--name">{{$item->name}}</p>
+                                <img class="catalog__inner-item--image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="" style="max-width: 400px;">
+                                <p class="catalog__inner-item--name" style="max-width: 350px;">{{$item->name}}</p>
                                 <p class="catalog__inner-item--price">{{$item->price}} ₽</p>
                             </a>
                         @endforeach

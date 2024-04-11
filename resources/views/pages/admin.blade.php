@@ -110,7 +110,7 @@
                     <div class="orders-list">
                         <div class="order-item">
                             <div class="order-top">
-                                <p class="order-num">Заказ: #12315</p>
+                                <p class="order-num">Заказ: #1215</p>
                                 <p class="order-status">Выполнен</p>
                                 <div class="btn-open-order">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" fill="none">
@@ -125,35 +125,35 @@
                             <div class="order-body">
                                 <ul class="order-basket-list">
                                     <li class="order-basket-item">
-                                        <div class="basket-list--item__image"></div>
-                                        <p class="basket-list--item__name">Кольцо серцеедка</p>
-                                        <p class="basket-list--item__num">Кол-во: <b>2 шт.</b></p>
-                                        <p class="basket-list--item__price">1.880 ₽</p>
+                                        <img class="basket-list--item__image" src="./public/storage/products/91KLXj9OVflLojwmaazX3VFS3lxDtphguO7eNbmw.jpg" alt="">
+                                        <p class="basket-list--item__name">Золотое кольцо с гранатом и бриллиантами</p>
+                                        <p class="basket-list--item__num">Кол-во: <b>1 шт.</b></p>
+                                        <p class="basket-list--item__price">10490 ₽</p>
                                     </li>
                                     <li class="order-basket-item">
-                                        <div class="basket-list--item__image"></div>
-                                        <p class="basket-list--item__name">Кольцо серцеедка</p>
+                                        <img class="basket-list--item__image" src="./public/storage/products/sCCmVSsc3e5aLjIP4oiYEjBcdm2HnYI4j5fSACvf.jpg" alt="">
+                                        <p class="basket-list--item__name">Серебряные серьги с фианитами</p>
                                         <p class="basket-list--item__num">Кол-во: <b>2 шт.</b></p>
-                                        <p class="basket-list--item__price">1.880 ₽</p>
+                                        <p class="basket-list--item__price">3490 ₽</p>
                                     </li>
                                     <li class="order-basket-item">
-                                        <div class="basket-list--item__image"></div>
-                                        <p class="basket-list--item__name">Кольцо серцеедка</p>
+                                        <img class="basket-list--item__image" src="./public/storage/products/443vexOLKGgTISyREnQzXF962F0DGbKHEhhRnXfh.jpg" alt="">
+                                        <p class="basket-list--item__name">Золотое кольцо с бриллиантами</p>
                                         <p class="basket-list--item__num">Кол-во: <b>2 шт.</b></p>
-                                        <p class="basket-list--item__price">1.880 ₽</p>
+                                        <p class="basket-list--item__price">29990 ₽</p>
                                     </li>
                                 </ul>
                                 <hr>
                                 <div class="order-detail">
                                     <p class="order-status">Статус: <span>Выполнено</span></p>
-                                    <p class="order-sum">Итого: <span>99.999 ₽</span></p>
+                                    <p class="order-sum">Итого: <span>77490 ₽</span></p>
                                 </div>
                                 <hr>
                                 <form method="post" class="order-detail">
                                     <div class="order-status--change">
                                         <p class="order-status">Статус:</p>
                                         <select>
-                                            <option name="" id="">Выполнено</option>
+                                            <option name="" id="" selected>Выполнено</option>
                                             <option name="" id="">На проверке</option>
                                             <option name="" id="">В пути</option>
                                             <option name="" id="">Отклонено</option>
