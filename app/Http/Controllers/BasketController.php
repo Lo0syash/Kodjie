@@ -19,9 +19,50 @@ class BasketController extends Controller
         return redirect()->route('catalog.oneItem', $date['product_id']);
     }
 
-    public function destroy(Basket $basket)
+    public function destroy(Request $request)
     {
-        $basket->delete();
-        return redirect()->route('pages.profile');
+        $user_id = Auth::id();
+        $product_id = $request->input('product_id');
+
+        $cartItem = Basket::where('user_id', $user_id)->where('product_id', $product_id)->first();
+
+        if ($cartItem) {
+            $cartItem->delete();
+        }
+        return redirect()->route('profile.index');
+
     }
+
+    public function increaseQuantity(Request $request)
+    {
+        $user_id = Auth::id();
+        $product_id = $request->input('product_id');
+
+        $cartItem = Basket::where('user_id', $user_id)->where('product_id', $product_id)->first();
+
+        if ($cartItem) {
+            if ($cartItem->quantity > 1) {
+                $cartItem->quantity += 1;
+                $cartItem->save();
+            }
+        }
+        return redirect()->route('profile.index');
+    }
+
+    public function decreaseQuantity(Request $request)
+    {
+        $user_id = Auth::id();
+        $product_id = $request->input('product_id');
+
+        $cartItem = Basket::where('user_id', $user_id)->where('product_id', $product_id)->first();
+
+        if ($cartItem) {
+            if ($cartItem->quantity > 1) {
+                $cartItem->quantity -= 1;
+                $cartItem->save();
+            }
+        }
+        return redirect()->route('profile.index');
+    }
+
 }

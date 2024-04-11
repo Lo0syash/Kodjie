@@ -28,6 +28,7 @@ Route::controller(AuthController::class)->group(function () {
    Route::post('/reg', 'reg')->name('registration.reg');
    Route::get('/profile', 'profile')->name('profile.index');
    Route::post('/logout', 'logout')->name('profile.logout');
+   Route::post('/checkout', 'checkout')->name('profile.checkout');
 });
 
 Route::controller(\App\Http\Controllers\CatalogController::class)->group(function () {
@@ -52,6 +53,9 @@ Route::controller(\App\Http\Controllers\CategoryContoller::class)->prefix('categ
 });
 
 Route::controller(\App\Http\Controllers\BasketController::class)->group(function () {
-   Route::post('/', 'create')->name('basket.create');
-   Route::delete('/{basket}', 'destroy')->name('basket.destroy');
+    Route::post('/basket', 'create')->name('basket.create');
+    Route::post('/basket/remove', 'destroy')->name('basket.destroy');
+    Route::get('/basket/increase', 'increaseQuantity')->name('basket.increase');
+    Route::post('/basket/decrease', 'decreaseQuantity')->name('basket.decrease');
 });
+

@@ -18,20 +18,29 @@
                         <h2 class="profile-title">Корзина</h2>
                         <form method="post">
                             <ul class="basket-list">
-                                @foreach($product as $item)
+                                @foreach($products as $item)
                                     <li class="basket-list--item">
-                                        <div class="basket-list--item__image"></div>
+                                        <img class="basket-list--item__image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="">
                                         <p class="basket-list--item__name">{{$item->name}}</p>
                                         <p class="basket-list--item__num">Кол-во: <b>{{$item->quantity}} шт.</b></p>
                                         <div class="basket-list--item__btn--container">
                                             <div>
-                                                <a href="#" class="basket-list--item__add">+</a>
-                                                <a href="#" class="basket-list--item__remove">-</a>
+                                                <form action="{{route('basket.increase') }}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="product_id" value="{{ $item->id }}">
+                                                    <button type="submit" class="basket-list--item__add" style="cursor: pointer">+</button>
+                                                </form>
+
+                                                <form action="{{route('basket.decrease')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="product_id" value="{{ $item->id }}">
+                                                    <button type="submit" class="basket-list--item__remove" style="cursor: pointer">-</button>
+                                                </form>
                                             </div>
-                                            <form action="{{route('basket.destroy', $item->id)}}">
+                                            <form action="{{route('basket.destroy', $item->id)}}" method="post">
                                                 @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="basket-list--item__delete" style="background: transparent">
+                                                <input type="hidden" name="product_id" value="{{ $item->id }}">
+                                                <button type="submit" class="basket-list--item__delete" style="background: transparent; cursor: pointer">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
                                                         <path d="M18 6L17.1991 18.0129C17.129 19.065 17.0939 19.5911 16.8667 19.99C16.6666 20.3412
                                                 16.3648 20.6235 16.0011 20.7998C15.588 21 15.0607 21 14.0062 21H9.99377C8.93927 21 8.41202
@@ -48,9 +57,12 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <div class="basket-btn--box">
-                                <p class="basket-sum">Итого: <span>99.999 ₽</span></p>
-                                <input type="submit" value="Оформить заказ" class="basket-status--buy">
+                            <div class="basket-btn--box" style="width: 750px;">
+                                <p class="basket-sum">Итого: <span>{{ number_format($totalPrice, 2, ',', '.') }} ₽</span></p>
+                                <form method="POST" action="{{ route('profile.checkout') }}">
+                                    @csrf
+                                    <input type="submit" name="checkout" class="basket-status--buy" value="Оформить заказ" style="cursor: pointer">
+                                </form>
                             </div>
                         </form>
 
