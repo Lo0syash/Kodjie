@@ -26,12 +26,9 @@
                         </div>
                     </div>
                     <div class="slide-container">
-                        <div class="btn-slide"></div>
-                        <div class="btn-slide"></div>
-                        <div class="btn-slide"></div>
-                        <div class="btn-slide"></div>
-                        <div class="btn-slide"></div>
-                        <div class="btn-slide"></div>
+                        @foreach($product as $item)
+                            <img class="btn-slide" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="{{$item->name}}">
+                        @endforeach
                     </div>
                 </div>
                 <p class="text-compl">Мы уделяем особое внимание качеству и уникальности каждого украшения, чтобы вы могли наслаждаться его красотой и элегантностью.</p>

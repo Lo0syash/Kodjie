@@ -16,7 +16,8 @@ class IndexController extends Controller
     }
     public function about()
     {
-        return view('pages.about');
+        $product = Product::all();
+        return view('pages.about',  compact('product'));
     }
     public function how()
     {
