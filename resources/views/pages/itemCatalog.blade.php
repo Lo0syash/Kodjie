@@ -4,7 +4,7 @@
     <section class="catalog-item">
         <div class="container">
             <div class="catalog-item__inner">
-                <img class="catalog__inner-item--image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($product->path))}}" alt="{{$product->name}}" style="border-radius: 15px;" >
+                <img class="catalog__inner-item--image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($product->path))}}" alt="{{$product->name}}" style="border-radius: 15px; max-width: 600px;" >
                 <div class="catalog-item__inner-content">
                     <h1 class="catalog-item__inner-title">{{$product->name}}</h1>
                     <p class="catalog-item__inner-price">{{$product->price}} ₽</p>
@@ -16,6 +16,9 @@
                             <button class="catalog-item__inner-basket" style="cursor: pointer">Добавить в корзину</button>
                         </form>
                     @endauth
+                    @guest()
+                        <a href="{{route('auth.index')}}" class="catalog-item__inner-basket">Для заказа, авторизируйтесь</a>
+                    @endguest
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@
                         @foreach($product as $item)
                             <a href="{{route('catalog.oneItem', $item->id)}}" class="catalog-list--item">
                                 <img class="catalog-list--item__image" src="{{asset('public' . \Illuminate\Support\Facades\Storage::url($item->path))}}" alt="">
-                                <p class="catalog-list--item__name">{{$item->name}}</p>
+                                <p class="catalog-list--item__name" style="max-width: 300px; line-height: 1.5rem;">{{$item->name}}</p>
                                 <p class="catalog-list--item__price">{{$item->price}} ₽</p>
                             </a>
                         @endforeach
